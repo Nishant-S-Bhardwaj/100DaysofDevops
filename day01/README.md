@@ -1,93 +1,131 @@
-# 100 Days of DevOps Journey 🚀
+🛠️ Day 01: Getting My Hands Dirty with Git & GitHub
+📖 What I Did
 
-Welcome to my **#100DaysOfDevOps** tracking repository! This repository serves as a daily log of my journey as I dive deep into DevOps, cloud engineering, automation, and infrastructure. Inspired by industry frameworks and guided by top communities, I am moving out of my comfort zone, shifting my mindset from "coding features" to "delivering value," and building my technical foundations from the ground up.
+Today officially marked Day 1 of my DevOps journey, and honestly, it completely changed the way I think about Git and GitHub.
 
----
+Before today, I used to see Git as nothing more than a tool to save my code online after finishing a project. My workflow was basically:
 
-## 📅 Daily Progress Log
+git add .
+git commit -m "done"
+git push
 
-### 🛠️ Day 01: Version Control Foundations (Git & GitHub)
-* **Date:** June 2026
-* **Instructor/Resources:** *Git and GitHub from Beginner to Pro* by Rahul Wagh & KodeKloud Labs
+And that's it.
 
-#### 1️⃣ What I Learned
-I kicked off Day 1 by restructuring my understanding of version control. I used to think Git was just a simple tool for saving local code updates, but today provided a crucial reality check. Version control is the structural backbone of modern CI/CD pipelines, collaborative engineering, and infrastructure-as-code state management.
+But after spending the day learning and experimenting, I realized Git is much more than a backup tool—it's the foundation of how modern development teams collaborate without stepping on each other's toes.
 
-#### 2️⃣ Core Concepts Covered
-* **Basic Git & Branching:** Learned how to cleanly isolate experimental features and hotfixes without disrupting the stable `main` branch codebase.
-* **Pull, Push, & Merge Operations:** Mastered the core data transport mechanics between local working directories, staging areas, and remote GitHub repositories.
-* **Resolving Merge Conflicts:** Learned how to safely approach, analyze, and resolve line-by-line code conflicts directly when upstream changes clash with local branches.
-* **Git Fetch vs. Pull:** Evaluated how `git fetch` updates local remote-tracking branches safely to audit upcoming shifts without forcing immediate merges into working files.
+I split my learning into two parts:
 
-#### 3️⃣ Hands-on Execution
-* **Lab Environment:** KodeKloud Git Labs
-* **Tasks Completed:** Executed real-world terminal scenarios initialized inside sandbox environments. Practiced configuring local repositories, committing standard project histories, branching strategies, and intentionally simulating/resolving code merge conflicts.
+Understanding the concepts behind Git and version control.
+Getting my hands dirty with practical labs and intentionally breaking things to learn how to fix them.
+🧠 Key Things I Learned
+🌿 Feature Branching = A Safe Playground
 
----
+One of the biggest lessons was understanding why branches exist.
 
-### 🌐 Day 02: Deconstructing DevOps Culture & Cloud Sandbox Setup
-* **Date:** June 2026
-* **Instructor/Resources:** Abhishek Veeramalla, TrainWithShubham & KodeKloud
+Instead of making changes directly to the main codebase, developers create separate branches to work on new features or bug fixes. This keeps the production code safe while allowing experimentation.
 
-#### 1️⃣ What I Learned (The DevOps Culture Shift)
-DevOps is completely misunderstood when viewed as just an accumulated toolstack (like Docker + Jenkins). Following insights from **Abhishek Veeramalla**, I learned that **DevOps is fundamentally a cultural shift**. It is designed to dismantle the historical, friction-heavy *"Wall of Confusion"* that separates application development teams (who favor velocity and rapid feature shipping) from operational infrastructure teams (who prioritize continuous system uptime and strict stability). It's a continuous, automated feedback loop shortening the system development lifecycle.
+If something breaks? No problem. The main branch remains untouched.
 
-#### 2️⃣ AWS Sandbox Infrastructure Provisioning
-To align with the **TrainWithShubham** structural roadmap, I initialized my dedicated cloud deployment environment:
-* Provisioned an **AWS (Amazon Web Services) Account** utilizing active free tier credit layers.
-* Configured foundational identity access management wrappers (**IAM roles and groups**) to handle strict principle-of-least-privilege permissions.
-* Built initial network security filters via customized **Inbound and Outbound Security Group Rules** to explicitly constrain open ports.
+🔄 How Code Actually Moves Around
 
-#### 3️⃣ Hands-on Sandbox Exercises
-* Logged into **KodeKloud** environments to map abstract theoretical operations against active terminal configurations, preparing to anchor multi-tier cloud infrastructure topologies.
+I finally understood the complete journey of code:
 
----
+Working Directory
+        ↓
+Staging Area (git add)
+        ↓
+Local Repository (git commit)
+        ↓
+Remote Repository (git push)
 
-### 🐧 Day 03 (Part 1/2): Stepping Out of the Comfort Zone — Navigating Linux
-* **Date:** June 2026
-* **Instructor/Resources:** *Linux One Shot* by TrainWithShubham & KodeKloud Labs
+And how teams stay in sync using:
 
-#### 1️⃣ Shifting the Workspace OS
-Today required breaking past my technical comfort boundaries. I formally executed a complete operational workspace transition, moving from **Windows over to Linux** to interact natively with cloud enterprise host systems.
+git push
+git pull
+git fetch
+git merge
+⚔️ Merge Conflicts Aren't That Scary
 
-#### 2️⃣ Core Concept: Active Friction over Passive Consumption
-Watching tutorials creates an illusion of competence. Tech skills require aggressive muscle memory. 
-> 💡 *The Bicycle Analogy:* Watching an expert ride a bicycle flawlessly will never teach you how to maintain your own balance. You can meticulously memorize the underlying physics of a pedal stroke, but until you physically grasp the handlebars, lean into the turns, and manage the wobbles yourself, you cannot ride. The Linux terminal operates exactly the same way—you have to drive it yourself to truly understand it.
+Merge conflicts always sounded intimidating.
 
-#### 3️⃣ Lab Accomplishments
-* **Source Training:** TrainWithShubham's deep-dive Linux tracking overview.
-* **Practical Validation:** Immersed directly inside **KodeKloud Linux Labs**. Handled raw navigation primitives, complex nested file system trees, explicit numerical/symbolic file permissions mapping (`chmod`/`chown`), and process tracing.
+Today I learned they're simply Git's way of saying:
 
----
+"Two people changed the same piece of code. Please tell me which version you want."
 
-### 🤖 Day 03 (Part 2/2): Launching Cloud Assets & Enterprise Automation Architecture
-* **Date:** June 2026
-* **Instructor/Resources:** Official Ansible Documentation & AWS Hands-on
+I practiced resolving conflicts manually by:
 
-#### 1️⃣ Launching My First EC2 Node
-Transitioned directly into provisioning live cloud infrastructure:
-* Initialized and launched a live **Amazon EC2 Instance** compute node.
-* Locked down network topology endpoints utilizing the specific security rules configured during Day 2.
-* Established an external cryptographic link to securely **SSH directly into the live remote cloud terminal**.
+Opening the conflicted file
+Reading the conflict markers
+Choosing the correct code
+Removing the markers
+Committing the final result
 
-#### 2️⃣ The Scale Paradox: The Need for Configuration Management
-Logging into a single EC2 server over SSH to manually run `apt-get update` or deploy a single package is simple. However, if an infrastructure scale grows to **1,000 parallel production servers**, manual node configurations become completely impossible, error-prone, and inefficient. 
-As DevOps engineers, our primary imperative is to automate away repetitive toil. To solve this scaling paradox, I began mapping out **Ansible**—an agentless, powerful Configuration Management framework designed to orchestrate states across multiple remote endpoints simultaneously from a solitary controller node.
+Seeing the merge complete successfully felt incredibly satisfying.
 
-#### 3️⃣ Initial Automation Blueprinting
-Began dissecting architectural documentation to write custom state definitions:
-* **Ansible Inventory Files:** Built a structured inventory tracking matrix to logically categorize and map multiple distinct target remote hosts.
-* **Ansible Playbooks:** Began drafting descriptive, idempotent **YAML-based blueprints** to automate programmatic changes uniformly across all targets without manually logging into them individually.
+🔍 Fetch vs Pull
 
----
+This was one of my favorite takeaways.
 
-## 🎯 High-Level Journey Goals
-* [x] Master Git workflows & conflict resolution mechanics.
-* [x] Set up standard AWS administrative sandboxes.
-* [x] Migrate to native Linux terminal infrastructure management.
-* [ ] Master Configuration Management workflows via Ansible.
-* [ ] Implement secure containerized services via Docker & Kubernetes.
-* [ ] Architect resilient, parameter-driven CI/CD Pipelines.
+git pull immediately downloads and merges changes.
+git fetch downloads changes without modifying my current work.
 
----
-*Connect with me on LinkedIn as I document this path live! Let's build, break, and automate together.* 😉
+I like thinking of git fetch as a reconnaissance mission—it lets me inspect what's happening upstream before bringing those changes into my branch.
+
+🚀 How I Learned
+
+Instead of hopping between random tutorials, I followed:
+
+Rahul Wagh's Git and GitHub: Beginner to Pro course
+
+The explanations were structured and easy to follow, which helped me build a strong foundation.
+
+But I also learned something important:
+
+Watching videos doesn't build skills. Typing commands does.
+
+So after every lesson, I immediately jumped into hands-on practice.
+
+💻 Hands-on Practice (KodeKloud Labs)
+
+Most of my day was spent inside KodeKloud's Git Labs, where I practiced real-world Git workflows.
+
+✅ Repository Setup
+
+Created repositories from scratch and configured Git globally.
+
+git init
+git config --global user.name
+git config --global user.email
+✅ Branching & Switching
+
+Created and switched between branches to safely experiment with changes.
+
+git checkout -b feature-branch
+✅ Working with Remotes
+
+Connected local repositories to remote servers and practiced pushing and pulling code.
+
+git remote add origin <repo-url>
+git push
+git pull
+✅ Resolving Merge Conflicts
+
+The lab intentionally created merge conflicts for practice.
+
+At first, the error screen looked terrifying.
+
+But after carefully reading the conflict markers and fixing the file manually, I successfully completed the merge and committed the changes.
+
+Definitely one of the most rewarding moments of the day.
+
+🎯 Day 01 Reflection
+
+Today wasn't about memorizing Git commands.
+
+It was about understanding why Git exists and how developers use it to collaborate, track changes, and ship software safely.
+
+The biggest lesson?
+
+Don't be afraid to break things. Some of the best learning happened when I made mistakes and figured out how to recover from them.
+
+Looking forward to Day 02. 🚀
